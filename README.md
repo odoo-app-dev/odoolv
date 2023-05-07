@@ -1,0 +1,57 @@
+# odoo log viewer
+
+This package help you to view [odoo](https://www.odoo.com/) log file online in a browser
+
+As an odoo developer you might need to know what is going on in your odoo log file.
+odoo log files are stored in ``` /var/log/odoo/``` folder in a linux server.
+This package is created based on http.server of python. All needed files such as html and javascript files are embeded 
+to the package. 
+
+
+
+## Instructions
+
+### 1. Install:
+
+```
+pip install odoolv
+```
+
+### 2. run program:
+
+2.1 from python:
+```python
+import odoolv
+odoolv.run()
+```
+2.2 from linux console:
+```shell
+$odoolv
+server started on :9000
+x.x.x.x - - [24/Jan/2023 19:55:04] "GET / HTTP/1.1" 200 -
+x.x.x.x - - [24/Jan/2023 19:55:04] "GET /log.js HTTP/1.1" 200 -
+
+```
+
+
+### 3. browse the following address:
+```html
+    http://<your_server_address>:9000
+
+```
+![](https://raw.githubusercontent.com/odoo-app-dev/odoolv/main/odoolv_1.png)
+
+### 4. How to use
+
+While server is installed and running, you can have access as an http connection on port 9000.
+odoo default log folder and log file name are embedded as default value. So, you will receive logs immediately.
+
+Each time you refresh your server page on ```http://<your_server_address>:9000```, you will receive the last 10 records
+of the log file. After that, it will fetch all new log records, every second.
+
+This package is simulating pycharm run view. This way, it always keeps the scroll the page on bottom automatically.
+
+If you scroll up a little, the reading process would be stopped. It means that you would not be intrupted by data refresh 
+while you are reading some lines.
+
+Besides, on the page header, there is a checkbox which you make you able to stop the auto fetch process.

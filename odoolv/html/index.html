@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta content="IE=edge" http-equiv="X-UA-Compatible">
+    <meta content="width=device-width, initial-scale=1.0" name="viewport">
+    <!--        <link rel="stylesheet" type="text/css" href="styles.css" />-->
+    <title>Odoo Log Viewer</title>
+    <style>
+        .header{
+            background-color: #6f4a66;
+            color: white;
+            font-family: cursive;
+            position: sticky;
+            top: 0;
+            margin:0px !important;
+            padding: 10px;
+            }
+        .odoo-title{
+            display:flex;
+            justify-content: space-between;
+            }
+        .head{
+            margin: 5px;
+            padding: 0px 0px 0px 20px;
+            min-width:320px;
+            }
+        .head h1{
+            margin:0px;
+            }
+        .head p{
+            margin:0px;
+            }
+        .inputs{
+            display:flex;
+            flex-wrap: wrap;
+            }
+        .inputs input{
+            border-radius: 4px;
+            padding: 3px;
+            }
+        .input_div{
+            margin:5px;
+            min-width:280px;
+            }
+        .input_div2{
+            margin:5px;
+            min-width:220px;
+            }
+        .state_text{
+            background: #d3d3d3;
+            border-radius: 4px;
+            padding: 3px;
+            }
+        .continue_read_checked input[type='checkbox']{
+            width: 18px !important;
+            height: 18px !important;
+            outline: 1px solid gray;
+            box-shadow: none;
+            font-size: 0.8em;
+            text-align: center;
+            line-height: 1em;
+            background: #d3d3d3;
+            accent-color: #86ff86;
+            }
+        .continue_read_checked input[type='checkbox']:checked:after {
+            accent-color: #86ff86;
+            }
+        .live-read {
+            min-width:60px;
+            }
+        .live_read_text{
+            color:#fdff68;
+            font-weight: bold;
+            }
+        .author{
+            color: wheat;
+            font-size: .5em;
+            }
+    </style>
+</head>
+<body>
+<div class="header">
+    <div class="odoo-title">
+        <div class="head">
+            <h1>odoo Log Viewer</h1>
+            <p>This is an odoo log reader. It reads log file every second and shows the latest lines.</p>
+        </div>
+        <div class="live-read">
+            <label for="is_live_read"></label>
+
+            <span class="live_read_text" id="is_live_read"></span>
+        </div>
+    </div>
+    <div class="inputs">
+        <div class="input_div">
+            <label for="log_path_id">Log Path:</label>
+            <input id="log_path_id" placeholder="/var/log/odoo" type="text" value="/var/log/odoo"/>
+        </div>
+        <div class="input_div">
+            <label for="log_file_id">Log File:
+                <input class="log" id="log_file_id" placeholder="odoo-server.log"
+                       type="text" value="odoo-server.log"/>
+            </label>
+        </div>
+        <div class="input_div2">
+            <label class="continue_read_checked ">Continue
+                <input checked="checked" id="continue_read_checked" type="checkbox"/>
+
+            </label>
+            <label>State:
+                <span class="state_text" id="state_text"> </span>
+            </label>
+        </div>
+        <!--    <button id="read_data" onclick="read_data()">READ</button>-->
+        <div class="input_div2">
+            <label for="file_size">File Size:
+                <span id="file_size"> </span>
+            </label>
+        </div>
+        <div class="input_div2">
+            <a class="author" href="https://github.com/odoo-app-dev/odoo_log_viewer"
+               target="_blank">Author: Arash Homayounfar
+            </a>
+        </div>
+    </div>
+</div>
+
+<div id="log_results"></div>
+<div style="height:60px;"></div>
+</body>
+<script src="log.js"></script>
+</html>

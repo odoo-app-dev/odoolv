@@ -1,0 +1,3 @@
+include odoolv/html/*.html
+include odoolv/css/*.css
+include odoolv/js/*.js

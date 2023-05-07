@@ -1,0 +1,16 @@
+LICENSE
+MANIFEST.in
+README.md
+pyproject.toml
+setup.cfg
+setup.py
+odoolv/__init__.py
+odoolv/module.py
+odoolv.egg-info/PKG-INFO
+odoolv.egg-info/SOURCES.txt
+odoolv.egg-info/dependency_links.txt
+odoolv.egg-info/entry_points.txt
+odoolv.egg-info/top_level.txt
+odoolv/css/styles.css
+odoolv/html/index.html
+odoolv/js/log.js
